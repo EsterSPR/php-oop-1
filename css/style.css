@@ -5,5 +5,10 @@
 }
 
 body{
-    background-color: red;
+    padding: 100px;
+    background-color: aliceblue;
+}
+
+.moviecardcol{
+    width: 25%;
 }

@@ -13,6 +13,7 @@
             $this -> mcountry = $mcountry;
         }
 
+        //SET POSTER
 
         public function posterSetter($mposter)
         {
@@ -24,12 +25,98 @@
             return $this -> mposter;
         }
 
+        //SET TITLE
 
-        public function printMInfo()
+        public function titleSetter($mtitle)
         {
-            return $this -> mtitle." - ".$this -> myear." - ".$this -> mgenre." - ".$this -> mcountry;
+            $this -> mtitle = $mtitle;
         }
+
+        public function titleGetter()
+        {
+            return $this -> mtitle;
+        }
+
+        //SET YEAR
+
+        public function yearSetter($myear)
+        {
+            $this -> myear = $myear;
+        }
+
+        public function yearGetter()
+        {
+            return $this -> myear;
+        }
+
+        //SET GENRE
+
+        public function genreSetter($mgenre)
+        {
+            $this -> mgenre = $mgenre;
+        }
+
+        public function genreGetter()
+        {
+            return $this -> mgenre;
+        }
+
+        //SET COUNTRY
+
+        public function countrySetter($mcountry)
+        {
+            $this -> mcountry = $mcountry;
+        }
+
+        public function countryGetter()
+        {
+            return $this -> mcountry;
+        }
+
+
+        // public function printMInfo()
+        // {
+        //     return $this -> mtitle." - ".$this -> myear." - ".$this -> mgenre." - ".$this -> mcountry;
+        // }
     }
+
+    $xiaohei = new movie('The Legend of Hei', '2019', 'Animation', 'China');
+        $nightmare = new movie('Nightmare on Elm Street', '1984', 'Slasher', 'USA');
+        $rockyhorror = new movie('The Rocky Horror Picture Show', '1975', 'Musical', 'UK');
+        $terrifier = new movie('Terrifier', '2016', 'Slasher', 'USA');
+        $errementari = new movie('Errementari: The Blacksmith and the Devil', '2018', 'Fantasy', 'Spain');
+
+        $xiaohei -> posterSetter('https://www.themoviedb.org/t/p/w1280/aLv87NgRJUPkQ6sVLP72IisDdt4.jpg');
+        $nightmare -> posterSetter('https://www.themoviedb.org/t/p/w1280/wGTpGGRMZmyFCcrY2YoxVTIBlli.jpg');
+        $rockyhorror -> posterSetter('https://www.themoviedb.org/t/p/w1280/3pyE6ZqDbuJi7zrNzzQzcKTWdmN.jpg');
+        $terrifier -> posterSetter('https://www.themoviedb.org/t/p/w1280/6PQqC4SbY910VvyVad6mvsboILU.jpg');
+        $errementari -> posterSetter('https://www.themoviedb.org/t/p/w1280/ltpi1uLkvx2BKHWwbpMjqdAtdHn.jpg');
+
+        // echo '<img src="'.$xiaohei -> posterGetter().'" style="width: 10%">';
+        // echo $xiaohei -> printMInfo();
+        //     echo "<br>";
+        // echo '<img src="'.$nightmare -> posterGetter().'" style="width: 10%">';
+        // echo $nightmare -> printMInfo();
+        //     echo "<br>";
+        // echo '<img src="'.$rockyhorror -> posterGetter().'" style="width: 10%">';
+        // echo $rockyhorror -> printMInfo();
+        //     echo "<br>";
+        // echo '<img src="'.$terrifier -> posterGetter().'" style="width: 10%">';
+        // echo $terrifier -> printMInfo();
+        //     echo "<br>";
+        // echo '<img src="'.$errementari -> posterGetter().'" style="width: 10%">';
+        // echo $errementari -> printMInfo();
+
+
+        //BONUS 2
+
+        $mlist = [
+            $xiaohei,
+            $nightmare,
+            $rockyhorror,
+            $terrifier,
+            $errementari
+        ];
 ?>
 
 <!DOCTYPE html>
@@ -44,34 +131,33 @@
 </head>
 <body>
 
-    <?php
-        $xiaohei = new movie('The Legend of Hei', '2019', 'Animation', 'China');
-        $nightmare = new movie('Nightmare on Elm Street', '1984', 'Slasher', 'USA');
-        $rockyhorror = new movie('The Rocky Horror Picture Show', '1975', 'Musical', 'UK');
-        $terrifier = new movie('Terrifier', '2016', 'Slasher', 'USA');
-        $errementari = new movie('Errementari: The Blacksmith and the Devil', '2018', 'Fantasy', 'Spain');
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <?php foreach($mlist as $movie) { ?>
 
-        $xiaohei -> posterSetter('https://www.themoviedb.org/t/p/w1280/aLv87NgRJUPkQ6sVLP72IisDdt4.jpg');
-        $nightmare -> posterSetter('https://www.themoviedb.org/t/p/w1280/wGTpGGRMZmyFCcrY2YoxVTIBlli.jpg');
-        $rockyhorror -> posterSetter('https://www.themoviedb.org/t/p/w1280/3pyE6ZqDbuJi7zrNzzQzcKTWdmN.jpg');
-        $terrifier -> posterSetter('https://www.themoviedb.org/t/p/w1280/6PQqC4SbY910VvyVad6mvsboILU.jpg');
-        $errementari -> posterSetter('https://www.themoviedb.org/t/p/w1280/ltpi1uLkvx2BKHWwbpMjqdAtdHn.jpg');
+        <div class="col moviecardcol"> 
 
-        echo '<img src="'.$xiaohei -> posterGetter().'" style="width: 10%">';
-        echo $xiaohei -> printMInfo();
-            echo "<br>";
-        echo '<img src="'.$nightmare -> posterGetter().'" style="width: 10%">';
-        echo $nightmare -> printMInfo();
-            echo "<br>";
-        echo '<img src="'.$rockyhorror -> posterGetter().'" style="width: 10%">';
-        echo $rockyhorror -> printMInfo();
-            echo "<br>";
-        echo '<img src="'.$terrifier -> posterGetter().'" style="width: 10%">';
-        echo $terrifier -> printMInfo();
-            echo "<br>";
-        echo '<img src="'.$errementari -> posterGetter().'" style="width: 10%">';
-        echo $errementari -> printMInfo();
-    ?>
+            <div class="card border border-primary-subtle">
+
+            <img src="<?php echo $movie->posterGetter(); ?>" class="card-img-top">
+
+            <div class="card-body">
+                <h5 class="card-title mt-2 text-primary"> 
+                    <?php echo $movie -> titleGetter(); ?> 
+                </h5>
+            </div>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item border-bottom border-primary-subtle"> <strong>Year:</strong> <?php echo $movie -> yearGetter(); ?> </li>
+                <li class="list-group-item border-bottom border-primary-subtle"> <strong>Genre:</strong> <?php echo $movie -> genreGetter(); ?> </li>
+                <li class="list-group-item"> <strong>Country:</strong> <?php echo $movie -> countryGetter(); ?> </li>
+            </ul>
+
+            </div>
+
+        </div>
+
+    <?php } ?>
+</div>
 
 <script src="./js/script.js"></script>
     
