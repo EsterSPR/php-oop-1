@@ -1,8 +1,19 @@
 <?php
     class movie{
         public $mtitle;
-        public $mgenre;
         public $myear;
+        public $mgenre;
+
+        public function __construct($mtitle, $myear, $mgenre){
+            $this -> mtitle = $mtitle;
+            $this -> myear = $myear;
+            $this -> mgenre = $mgenre;
+        }
+
+        public function printMInfo()
+        {
+            return $this -> mtitle." - ".$this -> myear." - ".$this -> mgenre;
+        }
     }
 ?>
 
@@ -18,7 +29,13 @@
 </head>
 <body>
 
-    
+    <?php
+        $xiaohei = new movie('The Legend of Hei', '2019', 'Animation');
+        $nightmare = new movie('Nightmare on Elm Street', '1984', 'Slasher');
+
+        echo $xiaohei -> printMInfo();
+        echo $nightmare -> printMInfo();
+    ?>
 
 <script src="./js/script.js"></script>
     
