@@ -85,12 +85,14 @@
         $rockyhorror = new movie('The Rocky Horror Picture Show', '1975', 'Musical', 'UK');
         $terrifier = new movie('Terrifier', '2016', 'Slasher', 'USA');
         $errementari = new movie('Errementari: The Blacksmith and the Devil', '2018', 'Fantasy', 'Spain');
+        $blueexorcist = new movie('Blue Exorcist: The Movie', '2012', 'Animation', 'Japan');
 
         $xiaohei -> posterSetter('https://www.themoviedb.org/t/p/w1280/aLv87NgRJUPkQ6sVLP72IisDdt4.jpg');
         $nightmare -> posterSetter('https://www.themoviedb.org/t/p/w1280/wGTpGGRMZmyFCcrY2YoxVTIBlli.jpg');
         $rockyhorror -> posterSetter('https://www.themoviedb.org/t/p/w1280/3pyE6ZqDbuJi7zrNzzQzcKTWdmN.jpg');
         $terrifier -> posterSetter('https://www.themoviedb.org/t/p/w1280/6PQqC4SbY910VvyVad6mvsboILU.jpg');
         $errementari -> posterSetter('https://www.themoviedb.org/t/p/w1280/ltpi1uLkvx2BKHWwbpMjqdAtdHn.jpg');
+        $blueexorcist -> posterSetter('https://www.themoviedb.org/t/p/w1280/sstaOUvPmMYzeWbYaeDXrYWBp44.jpg');
 
         // echo '<img src="'.$xiaohei -> posterGetter().'" style="width: 10%">';
         // echo $xiaohei -> printMInfo();
@@ -115,7 +117,8 @@
             $nightmare,
             $rockyhorror,
             $terrifier,
-            $errementari
+            $errementari,
+            $blueexorcist
         ];
 ?>
 
